@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Purple Fest Vadodara 2026 - India's premier festival celebrating diversity, inclusion, and empowerment of Persons with Disabilities (Divyangjan). Experience assistive tech, cultural performances, and inclusive sports.">
+  <title>Purple Fest Vadodara 2026 | Celebrating Inclusion & Empowerment</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="purple_logo_transparent.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-standard">
+
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- ========================================================= -->
+  <!-- PRELOADER (Matches final.mp4 with Interactive Controls) -->
+  <!-- ========================================================= -->
+  <aside id="preloader" class="preloader-overlay" aria-label="Purple Fest Vadodara Intro Animation">
+    <canvas id="preloader-canvas" class="preloader-canvas" aria-hidden="true"></canvas>
+
+
+
+    <!-- Central Stage for Animation -->
+    <main class="preloader-stage">
+      <!-- High Fidelity Video Player (Plays final.mp4) -->
+      <div id="video-container" class="stage-view active">
+        <div class="video-frame-glow"></div>
+        <video 
+          id="preloader-video" 
+          class="preloader-video-element" 
+          src="final.mp4" 
+          playsinline 
+          muted 
+          preload="auto"
+          aria-label="Animated Purple Fest Vadodara Logo Drawing">
+        </video>
+      </div>
+
+      <!-- Vector SVG Animated Stroke Player (Alternative Mode) -->
+      <div id="vector-container" class="stage-view">
+        <svg id="vector-svg" viewBox="0 0 800 600" class="vector-svg-element" aria-label="Vector Logo Animation">
+          <defs>
+            <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#430c65" />
+              <stop offset="50%" stop-color="#6a1b9a" />
+              <stop offset="100%" stop-color="#8e24aa" />
+            </linearGradient>
+            <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="3" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+
+          <!-- Dynamic SVG paths mimicking the Purple Fest emblem -->
+          <g class="svg-drawing-group">
+            <!-- Left Figure Loop -->
+            <path class="svg-stroke-path path-left" d="M 310,290 C 270,290 250,260 260,240 C 270,220 310,230 330,260 C 345,285 340,340 330,360 C 320,380 300,380 290,340 C 285,320 280,300 270,330 C 265,345 255,345 250,330" />
+            <!-- Center Figure Arch -->
+            <path class="svg-stroke-path path-center" d="M 330,260 C 370,180 430,180 470,260 C 490,300 500,360 480,380 C 465,395 450,370 440,320 C 430,270 410,270 400,320 C 390,370 375,395 360,380 C 340,360 350,300 370,260" />
+            <!-- Right Figure Loop -->
+            <path class="svg-stroke-path path-right" d="M 470,260 C 490,230 530,220 540,240 C 550,260 530,290 490,290 C 480,300 475,320 470,330 C 465,345 455,345 450,330 C 440,300 435,320 430,340 C 420,380 400,380 390,360" />
+            <!-- Connecting Horizon Ribbon -->
+            <path class="svg-stroke-path path-ribbon" d="M 270,260 C 330,200 470,200 530,260" />
+
+            <!-- Floating Hearts (Only 3 Hearts matching official brand emblem) -->
+            <path class="svg-heart heart-1" d="M 290 190 C 280 170 260 170 250 185 C 240 200 250 215 270 230 L 270 230 C 290 215 300 200 290 185 Z" />
+            <path class="svg-heart heart-2" d="M 400 150 C 390 130 370 130 360 145 C 350 160 360 175 380 190 L 380 190 C 400 175 410 160 400 145 Z" />
+            <path class="svg-heart heart-3" d="M 510 190 C 500 170 480 170 470 185 C 460 200 470 215 490 230 L 490 230 C 510 215 520 200 510 185 Z" />
+          </g>
+
+          <!-- Text Letters in SVG -->
+          <text class="svg-title-text" x="400" y="450" text-anchor="middle">PURPLE FEST</text>
+          <text class="svg-subtitle-text" x="400" y="495" text-anchor="middle">Vadodara</text>
+        </svg>
+      </div>
+    </main>
+
+  </aside>
+
+  <!-- ========================================================= -->
+  <!-- ACCESSIBILITY & UTILITY TOOLBAR -->
+  <!-- ========================================================= -->
+  <div class="a11y-toolbar" role="region" aria-label="Accessibility options">
+    <div class="a11y-container">
+      <div class="a11y-group">
+        <span class="a11y-label">
+          <svg class="a11y-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          Accessibility:
+        </span>
+        <button id="btn-font-decrease" class="a11y-tool-btn" title="Decrease font size">A-</button>
+        <button id="btn-font-reset" class="a11y-tool-btn" title="Reset font size">A</button>
+        <button id="btn-font-increase" class="a11y-tool-btn" title="Increase font size">A+</button>
+      </div>
+
+      <div class="a11y-group">
+        <button id="btn-contrast-toggle" class="a11y-pill-btn" title="Toggle high contrast mode">
+          <span class="pill-dot"></span>
+          <span id="contrast-text">High Contrast</span>
+        </button>
+        <button id="btn-dyslexia-toggle" class="a11y-pill-btn" title="Toggle dyslexia friendly font">
+          <span>Dyslexia Font</span>
+        </button>
+        <button id="btn-speak-summary" class="a11y-pill-btn speech-btn" title="Listen to festival audio narration">
+          <svg class="speak-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <span id="speak-btn-text">Listen Overview</span>
+        </button>
+      </div>
+
+      <div class="a11y-group a11y-meta">
+        <span class="meta-item">📍 Navlakhi Ground, Vadodara</span>
+        <span class="meta-item">🗓️ Nov 27–29, 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- MAIN NAVIGATION HEADER -->
+  <!-- ========================================================= -->
+  <header class="main-navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-link" aria-label="Purple Fest Vadodara Home">
+        <img src="purple_fest_vadodara_logo.png" alt="Purple Fest Vadodara Logo" class="brand-logo-img">
+        <div class="brand-text-block">
+          <span class="brand-title">PURPLE FEST</span>
+          <span class="brand-sub">VADODARA • GUJARAT</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Primary Navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#zones" class="nav-link">Festival Zones</a>
+        <a href="#schedule" class="nav-link">Schedule</a>
+        <a href="#accessibility" class="nav-link">Inclusion & Access</a>
+        <a href="#venue" class="nav-link">Venue</a>
+      </nav>
+
+      <!-- Nav Action CTAs -->
+      <div class="nav-actions">
+        <!-- Replay Preloader Button -->
+        <button id="btn-replay-preloader" class="nav-btn nav-btn-outline" title="Replay the animated intro video">
+          <svg class="nav-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <span>Replay Intro</span>
+        </button>
+
+        <!-- Register / Passes CTA -->
+        <button id="btn-open-register" class="nav-btn nav-btn-purple">
+          <span>Get Free Passes</span>
+          <svg class="nav-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button id="btn-mobile-toggle" class="mobile-toggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================= -->
+  <!-- MAIN WEBSITE CONTENT -->
+  <!-- ========================================================= -->
+  <main id="main-content" class="site-main">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-backdrop">
+        <img src="purple_fest_hero.jpg" alt="Purple Fest Vadodara celebration stage with artists, wheelchair performers and crowd" class="hero-bg-img">
+        <div class="hero-overlay-gradient"></div>
+      </div>
+
+      <div class="hero-content-wrapper">
+        <div class="hero-badge-pill">
+          <span class="pill-sparkle">✨</span>
+          <span>Gujarat's Largest Festival of Inclusion & Divyangjan Talents</span>
+        </div>
+
+        <h1 class="hero-title">
+          Celebrating <span class="text-gradient">Diversity</span>, Empowering <span class="text-gradient">Abilities</span>
+        </h1>
+
+        <p class="hero-lead">
+          Welcome to Purple Fest Vadodara — an extraordinary national rendezvous in Gujarat's cultural heartland. Join over 50,000 visitors, 100+ assistive technology pioneers, inclusive sports champions, and stellar performing artists united under one purple banner.
+        </p>
+
+        <!-- Live Countdown Widget -->
+        <div class="countdown-widget" aria-label="Time remaining until Purple Fest Vadodara opening">
+          <div class="countdown-title">FESTIVAL OPENS IN:</div>
+          <div class="countdown-grid">
+            <div class="countdown-cell">
+              <span id="count-days" class="cell-number">38</span>
+              <span class="cell-label">Days</span>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-cell">
+              <span id="count-hours" class="cell-number">14</span>
+              <span class="cell-label">Hours</span>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-cell">
+              <span id="count-mins" class="cell-number">28</span>
+              <span class="cell-label">Mins</span>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-cell">
+              <span id="count-secs" class="cell-number">45</span>
+              <span class="cell-label">Secs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero CTAs -->
+        <div class="hero-button-group">
+          <button id="hero-register-btn" class="btn-primary-purple">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Register Free Pass (Divyangjan & Companions)</span>
+          </button>
+          
+          <a href="#zones" class="btn-secondary-glass">
+            <span>Explore 6 Festive Zones</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Quick Trust Badges -->
+        <div class="hero-trust-badges">
+          <div class="trust-badge">
+            <span class="trust-icon">♿</span>
+            <span>100% Universally Accessible Venue</span>
+          </div>
+          <div class="trust-badge">
+            <span class="trust-icon">🤟</span>
+            <span>Live ISL Interpreters on All Stages</span>
+          </div>
+          <div class="trust-badge">
+            <span class="trust-icon">🎟️</span>
+            <span>Zero Entry Fee for Divyangjan</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY IMPACT & NUMBERS -->
+    <section class="impact-metrics-section">
+      <div class="section-container">
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-number">50,000+</div>
+            <div class="metric-label">Attendees & Delegates</div>
+            <p class="metric-desc">Participants joining from every district of Gujarat and all 28 states of India.</p>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">100+</div>
+            <div class="metric-label">Assistive Tech Pioneers</div>
+            <p class="metric-desc">Startups, roboticists, AI innovators demoing life-changing assistive devices.</p>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">21</div>
+            <div class="metric-label">Disabilities Recognized</div>
+            <p class="metric-desc">Comprehensive support and celebration honoring all 21 RPwD Act categories.</p>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">40+</div>
+            <div class="metric-label">Sports & Cultural Showcases</div>
+            <p class="metric-desc">From blind cricket to wheelchair dance, showcasing superhuman determination.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+      <div class="section-container">
+        <div class="about-grid">
+          <div class="about-text-col">
+            <div class="section-eyebrow">ABOUT PURPLE FEST VADODARA</div>
+            <h2 class="section-heading">A National Movement Towards an Inclusive India</h2>
+            <p class="paragraph-lead">
+              The Purple Fest is India's flagship festival of inclusion, designed to reshape societal perspectives, remove physical and attitudinal barriers, and illuminate the extraordinary potential of Persons with Disabilities.
+            </p>
+            <p class="paragraph-body">
+              Following monumental editions in Goa and New Delhi, Vadodara — the cultural heart of Gujarat renowned for the progressive vision of Maharaja Sayajirao Gaekwad III — now opens its arms to host this historic gathering. Across three unforgettable days at Navlakhi Ground and Sayaji Baug, experience a world where accessibility is not an afterthought, but the very foundation.
+            </p>
+
+            <div class="about-pillars">
+              <div class="pillar-item">
+                <div class="pillar-icon">💜</div>
+                <div>
+                  <h3 class="pillar-title">Dignity & Equal Opportunity</h3>
+                  <p class="pillar-desc">Advancing accessibility as a fundamental human right across education, jobs, and social life.</p>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <div class="pillar-icon">🤝</div>
+                <div>
+                  <h3 class="pillar-title">Sensitization & Empathy</h3>
+                  <p class="pillar-desc">Enabling non-disabled citizens to immerse themselves in lived experiences through interactive simulation zones.</p>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <div class="pillar-icon">🚀</div>
+                <div>
+                  <h3 class="pillar-title">Innovation & Independence</h3>
+                  <p class="pillar-desc">Connecting innovators, investors, and Divyang users to accelerate affordable assistive technology.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual-col">
+            <div class="about-image-card">
+              <img src="purple_fest_hero.jpg" alt="Purple Fest Vadodara celebration" class="about-main-img">
+              <div class="about-stat-floating">
+                <div class="stat-highlight">3 Days</div>
+                <div class="stat-text">Uninterrupted celebration, sports, culture & advocacy in Vadodara</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FESTIVAL ZONES & EXPERIENCES -->
+    <section id="zones" class="zones-section">
+      <div class="section-container">
+        <div class="section-header-center">
+          <div class="section-eyebrow">EXPERIENCE THE FESTIVAL</div>
+          <h2 class="section-heading">6 Electrifying Purple Zones</h2>
+          <p class="section-subheading">
+            Each zone is curated to delight, educate, empower, and inspire visitors of all abilities.
+          </p>
+        </div>
+
+        <div class="zones-grid">
+          <!-- Zone 1: Assistive Tech -->
+          <article class="zone-card">
+            <div class="zone-image-wrap">
+              <img src="purple_expo.jpg" alt="Assistive Tech innovations at Purple Fest Vadodara" class="zone-img">
+              <span class="zone-tag">Technology & Innovation</span>
+            </div>
+            <div class="zone-body">
+              <h3 class="zone-title">Purple Assistive Tech Expo</h3>
+              <p class="zone-desc">
+                Step into tomorrow. Experience cutting-edge AI Braille tablets, mind-controlled bionic prosthetics, eye-tracking speech synthesizers, and smart motorized wheelchairs developed by India's top IITs and startups.
+              </p>
+              <ul class="zone-features">
+                <li>Hands-on gadget trial stations</li>
+                <li>Live assistive tech hackathon & product launches</li>
+                <li>Affordable assistive aids consultation kiosk</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Zone 2: Inclusive Sports -->
+          <article class="zone-card">
+            <div class="zone-image-wrap">
+              <img src="purple_sports.jpg" alt="Inclusive blind cricket and wheelchair basketball tournament" class="zone-img">
+              <span class="zone-tag">Sports & Champions</span>
+            </div>
+            <div class="zone-body">
+              <h3 class="zone-title">Purple Sports Arena</h3>
+              <p class="zone-desc">
+                Witness exhilarating athletic power and unyielding grit. Cheer for national teams in Blind Cricket, Wheelchair Basketball showdowns, Para-Badminton, Sitting Volleyball, and Boccia.
+              </p>
+              <ul class="zone-features">
+                <li>National Blind Cricket Championship match</li>
+                <li>Celebrity exhibition match with Gujarat cricket stars</li>
+                <li>Inclusive games workshop for kids and families</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Zone 3: Cultural Stage -->
+          <article class="zone-card">
+            <div class="zone-image-wrap">
+              <img src="purple_fest_hero.jpg" alt="Live musical and wheelchair dance performances" class="zone-img">
+              <span class="zone-tag">Arts & Performance</span>
+            </div>
+            <div class="zone-body">
+              <h3 class="zone-title">Purple Kalaa & Conclave Stage</h3>
+              <p class="zone-desc">
+                Immerse yourself in soul-stirring live concerts by visually impaired symphonies, mesmerizing wheelchair Garba & contemporary dance troupes, deaf theater, and an inclusive couture fashion runway.
+              </p>
+              <ul class="zone-features">
+                <li>Vadodara's first Wheelchair Garba gala</li>
+                <li>Sign Language musical chorus & Deaf Poetry slam</li>
+                <li>Nightly celebrity gala performances</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Zone 4: Experience & Empathy -->
+          <article class="zone-card">
+            <div class="zone-image-wrap placeholder-zone-bg">
+              <div class="sensory-icon-wrap">
+                <span class="sensory-big-icon">👁️‍🗨️</span>
+              </div>
+              <span class="zone-tag">Sensory & Empathy</span>
+            </div>
+            <div class="zone-body">
+              <h3 class="zone-title">Purple Empathy Pavilion</h3>
+              <p class="zone-desc">
+                Walk in another's shoes. Enter the Total Darkness Experience guided by visually impaired guides, navigate wheelchair obstacle courses, and learn everyday Indian Sign Language (ISL) in 15-minute micro sessions.
+              </p>
+              <ul class="zone-features">
+                <li>Blindfolded sensory dine-in counter</li>
+                <li>Sensory calming quiet pods for neurodivergent visitors</li>
+                <li>Interactive Braille printing workshop</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Zone 5: Think Tank & Conclaves -->
+          <article class="zone-card">
+            <div class="zone-image-wrap placeholder-zone-bg bg-purple-conclave">
+              <div class="sensory-icon-wrap">
+                <span class="sensory-big-icon">🏛️</span>
+              </div>
+              <span class="zone-tag">Policy & Dialogue</span>
+            </div>
+            <div class="zone-body">
+              <h3 class="zone-title">Purple Think Tank Conclave</h3>
+              <p class="zone-desc">
+                Over 60 national policymakers, corporate HR directors, accessibility architects, and disability advocates brainstorm inclusive employment policies, accessible public transport, and digital accessibility compliance.
+              </p>
+              <ul class="zone-features">
+                <li>Accessible Tourism in Gujarat Blueprint</li>
+                <li>Divyangjan Corporate Job Fair (1,000+ openings)</li>
+                <li>National Accessible India Campaign review</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Zone 6: Bazaar & Food Fiesta -->
+          <article class="zone-card">
+            <div class="zone-image-wrap placeholder-zone-bg bg-purple-bazaar">
+              <div class="sensory-icon-wrap">
+                <span class="sensory-big-icon">🛍️</span>
+              </div>
+              <span class="zone-tag">Crafts & Gastronomy</span>
+            </div>
+            <div class="zone-body">
+              <h3 class="zone-title">Purple Bazaar & Flavors of Gujarat</h3>
+              <p class="zone-desc">
+                Support over 80 micro-entrepreneurs and artisans with disabilities selling handcrafted textiles, pottery, organic soaps, and artwork. Relish Vadodara’s authentic culinary delights with tactile and audio menus.
+              </p>
+              <ul class="zone-features">
+                <li>100% proceeds directly to Divyang artisans</li>
+                <li>Tactile and Braille restaurant menus</li>
+                <li>Sign-language friendly ordering kiosks</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE SECTION -->
+    <section id="schedule" class="schedule-section">
+      <div class="section-container">
+        <div class="section-header-center">
+          <div class="section-eyebrow">PLAN YOUR VISIT</div>
+          <h2 class="section-heading">Festival Schedule & Highlights</h2>
+          <p class="section-subheading">
+            Choose a day or filter by category to discover events tailored to your interests.
+          </p>
+        </div>
+
+        <!-- Schedule Filter Controls -->
+        <div class="schedule-controls">
+          <div class="day-tabs">
+            <button class="day-tab active" data-day="day1">Day 1: Friday, Nov 27<br><small>Opening & Conclave</small></button>
+            <button class="day-tab" data-day="day2">Day 2: Saturday, Nov 28<br><small>Sports & Exhibitions</small></button>
+            <button class="day-tab" data-day="day3">Day 3: Sunday, Nov 29<br><small>Grand Gala & Awards</small></button>
+          </div>
+
+          <div class="category-filters">
+            <button class="cat-filter active" data-cat="all">All Events</button>
+            <button class="cat-filter" data-cat="culture">Culture & Dance</button>
+            <button class="cat-filter" data-cat="sports">Sports</button>
+            <button class="cat-filter" data-cat="tech">Tech Expo</button>
+            <button class="cat-filter" data-cat="conclave">Conclaves</button>
+          </div>
+        </div>
+
+        <!-- Event Cards Container -->
+        <div class="schedule-grid" id="schedule-grid">
+          <!-- Populated dynamically via app.js -->
+        </div>
+
+        <!-- Bookmark Counter Bar -->
+        <div class="schedule-bookmark-bar">
+          <span>⭐ Bookmarked Events: <strong id="bookmark-count">0</strong></span>
+          <button id="btn-show-bookmarks" class="btn-text-link">View My Saved Schedule</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCESSIBILITY FIRST COMMITMENT -->
+    <section id="accessibility" class="a11y-section">
+      <div class="section-container">
+        <div class="a11y-card-showcase">
+          <div class="a11y-header">
+            <div class="section-eyebrow">OUR SOLEMN PLEDGE</div>
+            <h2 class="section-heading text-white">100% Barrier-Free Environment</h2>
+            <p class="section-subheading text-white-80">
+              Purple Fest Vadodara is constructed from the ground up to be a gold-standard benchmark in universal accessibility.
+            </p>
+          </div>
+
+          <div class="a11y-features-grid">
+            <div class="a11y-feature-box">
+              <div class="box-icon">♿</div>
+              <h3 class="box-title">Wheelchair Navigable</h3>
+              <p class="box-desc">Zero-step gentle ramps (1:12 slope), rubberized smooth pathways across lawns, and accessible toilet blocks every 100 meters.</p>
+            </div>
+
+            <div class="a11y-feature-box">
+              <div class="box-icon">🤟</div>
+              <h3 class="box-title">Indian Sign Language (ISL)</h3>
+              <p class="box-desc">60+ certified ISL interpreters deployed across all keynotes, stage concerts, seminar rooms, and help desks.</p>
+            </div>
+
+            <div class="a11y-feature-box">
+              <div class="box-icon">🦯</div>
+              <h3 class="box-title">Tactile Paths & Braille</h3>
+              <p class="box-desc">Comprehensive tactile guidance pavers leading to every zone, Braille maps at entrances, and tactile stall indicators.</p>
+            </div>
+
+            <div class="a11y-feature-box">
+              <div class="box-icon">🎧</div>
+              <h3 class="box-title">Live Audio Description</h3>
+              <p class="box-desc">Real-time FM and mobile audio stream describing visual aspects of dance, sports matches, and theatrical performances.</p>
+            </div>
+
+            <div class="a11y-feature-box">
+              <div class="box-icon">🫧</div>
+              <h3 class="box-title">Quiet Sensory Rooms</h3>
+              <p class="box-desc">Dedicated low-lit, sound-dampened sensory rest pods equipped with weighted blankets and noise-cancelling headphones.</p>
+            </div>
+
+            <div class="a11y-feature-box">
+              <div class="box-icon">🤝</div>
+              <h3 class="box-title">Personal Purple Buddies</h3>
+              <p class="box-desc">500+ trained collegiate and NGO volunteers ready at the arrival gates to offer one-on-one sighted guide and mobility assistance.</p>
+            </div>
+          </div>
+
+          <div class="a11y-helpline-box">
+            <div class="helpline-left">
+              <strong>Need special accommodations or accessible transit from Vadodara railway station?</strong>
+              <span>Our dedicated Accessibility Concierge is available 24/7.</span>
+            </div>
+            <a href="tel:1800-PURPLE-FEST" class="helpline-btn">
+              📞 1800-PURPLE-FEST (Toll-Free)
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENUE & CITY GUIDE -->
+    <section id="venue" class="venue-section">
+      <div class="section-container">
+        <div class="section-header-center">
+          <div class="section-eyebrow">LOCATION & HOST CITY</div>
+          <h2 class="section-heading">Navlakhi Grounds, Vadodara</h2>
+          <p class="section-subheading">
+            Set against the royal gardens and historic pavilions of Vadodara, Gujarat.
+          </p>
+        </div>
+
+        <div class="venue-grid">
+          <div class="venue-details-card">
+            <h3 class="venue-title">Navlakhi Palace Grounds & Sayaji Baug</h3>
+            <p class="venue-address">
+              📍 Rajmahal Road, Near Kirti Mandir, Vadodara, Gujarat 390001
+            </p>
+            <p class="venue-info-text">
+              Spread over 40 lush green acres in the heart of Vadodara, Navlakhi Grounds provides a level, sprawling, and historic venue with ample tree shade, paved access roads, and seamless transit links.
+            </p>
+
+            <div class="venue-transport-list">
+              <div class="transport-item">
+                <span class="transport-icon">🚆</span>
+                <div>
+                  <strong>Vadodara Junction Railway Station (2.5 km)</strong>
+                  <p>Fully equipped with braille boards, elevators, and dedicated Purple Fest accessible low-floor shuttle buses every 15 minutes.</p>
+                </div>
+              </div>
+              <div class="transport-item">
+                <span class="transport-icon">✈️</span>
+                <div>
+                  <strong>Vadodara Airport (BDQ) (6.8 km)</strong>
+                  <p>Direct flights from Mumbai, Delhi, Bengaluru, and Hyderabad with pre-booked accessible taxi support.</p>
+                </div>
+              </div>
+              <div class="transport-item">
+                <span class="transport-icon">🚗</span>
+                <div>
+                  <strong>Accessible Parking & Drop-Off Zones</strong>
+                  <p>Dedicated prioritized parking within 50 meters of main gates for wheelchair vehicles and disabled drivers.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="venue-highlights-card">
+            <h3 class="highlights-title">Vadodara's Legacy of Inclusion</h3>
+            <p class="highlights-text">
+              Under the visionary Maharaja Sayajirao Gaekwad III, Vadodara established some of India's earliest free primary schools for girls and children with disabilities over 140 years ago.
+            </p>
+            <div class="city-chips">
+              <span class="city-chip">Cultural Capital of Gujarat</span>
+              <span class="city-chip">Garba Capital</span>
+              <span class="city-chip">Gaekwad Heritage</span>
+              <span class="city-chip">MS University of Baroda</span>
+            </div>
+            
+            <div class="venue-cta-box">
+              <h4>Planning Your Trip?</h4>
+              <p>We have partnered with 14 accessible hotels offering discounted rates and roll-in showers.</p>
+              <button class="btn-primary-purple" onclick="alert('Accessible Hotel Guide PDF will be downloaded.')">
+                Download Accessible Hotel Directory
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION / REGISTRATION -->
+    <section class="cta-banner-section">
+      <div class="section-container">
+        <div class="cta-box">
+          <div class="cta-content">
+            <h2 class="cta-title">Be Part of the Purple Revolution in Vadodara!</h2>
+            <p class="cta-text">
+              Admission is completely FREE for Persons with Disabilities and their companions. Register online today to receive your digital delegate pass with priority accessibility fast-track entry.
+            </p>
+            <div class="cta-buttons">
+              <button id="cta-register-btn" class="btn-cta-white">Get Your Free Pass Now</button>
+              <button id="cta-replay-btn" class="btn-cta-trans">🎬 Replay Intro Animation</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- REGISTRATION & DIGITAL PASS MODAL -->
+  <!-- ========================================================= -->
+  <div id="pass-modal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button id="modal-close-btn" class="modal-close" aria-label="Close registration modal">&times;</button>
+      
+      <div id="modal-form-view">
+        <div class="modal-header">
+          <img src="purple_fest_vadodara_logo.png" alt="Purple Fest" class="modal-logo">
+          <div>
+            <h2 id="modal-title" class="modal-title">Get Your Purple Fest Pass</h2>
+            <p class="modal-subtitle">Vadodara 2026 • Free Registration for Divyangjan & Companions</p>
+          </div>
+        </div>
+
+        <form id="pass-form" class="pass-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="pass-name">Full Name *</label>
+              <input type="text" id="pass-name" required placeholder="e.g. Aanya Sharma" class="form-input">
+            </div>
+            <div class="form-group">
+              <label for="pass-email">Email Address *</label>
+              <input type="email" id="pass-email" required placeholder="e.g. aanya@example.com" class="form-input">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="pass-phone">Mobile Number *</label>
+              <input type="tel" id="pass-phone" required placeholder="e.g. +91 98765 43210" class="form-input">
+            </div>
+            <div class="form-group">
+              <label for="pass-category">Attendee Category *</label>
+              <select id="pass-category" required class="form-input">
+                <option value="Divyangjan (Person with Disability)">Divyangjan (Person with Disability) - Free</option>
+                <option value="Companion / Escort of Divyangjan">Companion / Escort of Divyangjan - Free</option>
+                <option value="General Public / Supporter">General Public / Supporter - Free</option>
+                <option value="Student / Volunteer">Student / Volunteer - Free</option>
+                <option value="Industry Delegate / Innovator">Industry Delegate / Innovator</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Accessibility Accommodations Required (Optional)</label>
+            <div class="checkbox-grid">
+              <label class="check-label"><input type="checkbox" name="a11y_pref" value="Wheelchair Assistance"> Wheelchair / Mobility Aid</label>
+              <label class="check-label"><input type="checkbox" name="a11y_pref" value="Sign Language Interpreter"> ISL Interpreter</label>
+              <label class="check-label"><input type="checkbox" name="a11y_pref" value="Braille / Audio Guide"> Braille / Audio Guide</label>
+              <label class="check-label"><input type="checkbox" name="a11y_pref" value="Sensory Calming Kit"> Sensory Calming Kit</label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary-purple btn-full-width">
+            <span>Generate Instant Festival Pass</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+      </div>
+
+      <!-- Generated Pass Digital Ticket View -->
+      <div id="modal-ticket-view" class="ticket-view" style="display: none;">
+        <div class="ticket-card" id="digital-ticket">
+          <div class="ticket-left">
+            <div class="ticket-brand">
+              <img src="purple_fest_vadodara_logo.png" alt="Logo" class="ticket-logo-small">
+              <div>
+                <span class="ticket-event-name">PURPLE FEST VADODARA 2026</span>
+                <span class="ticket-venue-tag">Navlakhi Ground, Vadodara • Nov 27–29</span>
+              </div>
+            </div>
+
+            <div class="ticket-details">
+              <div class="ticket-field">
+                <span class="t-label">ATTENDEE NAME</span>
+                <span id="ticket-attendee-name" class="t-val">Aanya Sharma</span>
+              </div>
+              <div class="ticket-field">
+                <span class="t-label">PASS CATEGORY</span>
+                <span id="ticket-pass-cat" class="t-val">Divyangjan (All Access)</span>
+              </div>
+              <div class="ticket-field">
+                <span class="t-label">PASS ID</span>
+                <span id="ticket-pass-id" class="t-val t-badge">PFV-2026-8492</span>
+              </div>
+              <div class="ticket-field">
+                <span class="t-label">ACCOMMODATIONS</span>
+                <span id="ticket-a11y-needed" class="t-val t-small">Standard Accessible</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ticket-divider">
+            <span class="ticket-notch notch-top"></span>
+            <span class="ticket-stitch"></span>
+            <span class="ticket-notch notch-bottom"></span>
+          </div>
+
+          <div class="ticket-right">
+            <canvas id="ticket-qr" width="130" height="130" class="ticket-qr-canvas"></canvas>
+            <span class="qr-label">SCAN AT GATE FOR FAST-TRACK ENTRY</span>
+          </div>
+        </div>
+
+        <div class="ticket-actions">
+          <button id="btn-print-ticket" class="btn-primary-purple">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>Print / Save Ticket</span>
+          </button>
+          <button id="btn-ticket-done" class="btn-secondary-glass text-dark">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- FOOTER -->
+  <!-- ========================================================= -->
+  <footer class="site-footer">
+    <div class="section-container">
+      <div class="footer-grid">
+        <div class="footer-col-brand">
+          <div class="footer-brand-row">
+            <img src="purple_fest_vadodara_logo.png" alt="Purple Fest Vadodara" class="footer-logo">
+            <div>
+              <span class="footer-brand-title">PURPLE FEST VADODARA</span>
+              <span class="footer-brand-subtitle">Celebrating Inclusivity & Human Dignity</span>
+            </div>
+          </div>
+          <p class="footer-about-text">
+            Gujarat's grandest festival for Persons with Disabilities. Organized in proud association with the Department of Social Justice & Empowerment, Govt. of Gujarat, and the Vadodara Municipal Corporation.
+          </p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook" class="social-icon">f</a>
+            <a href="#" aria-label="X (Twitter)" class="social-icon">𝕏</a>
+            <a href="#" aria-label="Instagram" class="social-icon">📷</a>
+            <a href="#" aria-label="YouTube" class="social-icon">▶</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Festival Highlights</h4>
+          <ul class="footer-links">
+            <li><a href="#zones">Assistive Tech Expo</a></li>
+            <li><a href="#zones">Purple Sports Arena</a></li>
+            <li><a href="#zones">Kalaa & Cultural Stage</a></li>
+            <li><a href="#zones">Wheelchair Garba Gala</a></li>
+            <li><a href="#zones">Purple Bazaar</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Accessibility & Help</h4>
+          <ul class="footer-links">
+            <li><a href="#accessibility">Barrier-Free Pledge</a></li>
+            <li><a href="#accessibility">Sign Language Services</a></li>
+            <li><a href="#venue">Accessible Transit & Hotels</a></li>
+            <li><a href="tel:1800-PURPLE-FEST">Toll-Free Helpline</a></li>
+            <li><a href="#pass-modal" id="footer-reg-link">Request Volunteer Buddy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Experience Intro</h4>
+          <p class="footer-intro-desc">Want to experience the animated brand opening sequence again?</p>
+          <button id="footer-replay-btn" class="nav-btn nav-btn-purple">
+            <svg class="nav-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span>Play Intro Animation</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <p>© 2026 Purple Fest Vadodara. All Rights Reserved. Built with universal accessibility and care.</p>
+        <p class="footer-patron-text">Empowered by Government of Gujarat & Vadodara Municipal Corporation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>

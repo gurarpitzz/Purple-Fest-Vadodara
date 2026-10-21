@@ -1,0 +1,12 @@
+# OS & Editor files
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+.vscode/
+.idea/
+
+# Node logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
