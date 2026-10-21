@@ -1,4 +1,4 @@
-# 💜 Purple Fest Vadodara 2026
+# Purple Fest Vadodara 2026
 
 Official web experience for **Purple Fest Vadodara 2026** — India's premier festival celebrating diversity, inclusivity, accessibility, and empowerment.
 
@@ -6,7 +6,7 @@ Official web experience for **Purple Fest Vadodara 2026** — India's premier fe
 
 ---
 
-## 🌟 Highlights & Features
+## Highlights & Features
 
 - **Cinematic Flow Animation Intro**: Stroke-by-stroke flowing line drawing animation representing unity and inclusivity, featuring the authentic 3-heart emblem.
 - **Accessibility First**:
@@ -27,7 +27,7 @@ Official web experience for **Purple Fest Vadodara 2026** — India's premier fe
 
 ---
 
-## 🚀 Quick Start (Local Setup)
+## Quick Start (Local Setup)
 
 ### Prerequisites
 - Node.js (v16+ recommended)
@@ -48,7 +48,7 @@ Open [http://localhost:3000](http://localhost:3000) in your web browser.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 ├── index.html                           # Main web application & semantic markup
@@ -66,8 +66,8 @@ Open [http://localhost:3000](http://localhost:3000) in your web browser.
 
 ---
 
-## 🤝 Inclusion & Accessibility
+## Inclusion & Accessibility
 Designed with deep consideration for WCAG 2.1 AA accessibility guidelines, ensuring equal access for individuals with visual, motor, auditory, and cognitive disabilities.
 
-## 📄 License
+## License
 MIT License.
