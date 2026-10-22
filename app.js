@@ -782,32 +782,71 @@ function drawMockQRCode(canvas, dataStr) {
    ========================================================= */
 function initMobileNav() {
   const toggleBtn = document.getElementById('btn-mobile-toggle');
+  const closeBtn = document.getElementById('btn-mobile-close');
   const navMenu = document.getElementById('nav-menu');
+  const backdrop = document.getElementById('mobile-nav-backdrop');
+  const mobileRegisterBtn = document.getElementById('btn-mobile-register');
+  const mobileReplayBtn = document.getElementById('btn-mobile-replay');
+
+  function openNav() {
+    if (!navMenu) return;
+    navMenu.classList.add('mobile-open');
+    if (backdrop) backdrop.classList.add('mobile-open');
+    if (toggleBtn) {
+      toggleBtn.classList.add('active');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+    }
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeNav() {
+    if (!navMenu) return;
+    navMenu.classList.remove('mobile-open');
+    if (backdrop) backdrop.classList.remove('mobile-open');
+    if (toggleBtn) {
+      toggleBtn.classList.remove('active');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    }
+    document.body.style.overflow = '';
+  }
 
   if (toggleBtn && navMenu) {
     toggleBtn.addEventListener('click', () => {
-      const isVisible = navMenu.style.display === 'flex';
-      navMenu.style.display = isVisible ? 'none' : 'flex';
-      if (!isVisible) {
-        navMenu.style.flexDirection = 'column';
-        navMenu.style.position = 'absolute';
-        navMenu.style.top = '100%';
-        navMenu.style.left = '0';
-        navMenu.style.right = '0';
-        navMenu.style.background = '#fdfdf9';
-        navMenu.style.padding = '20px';
-        navMenu.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-        navMenu.style.borderBottom = '2px solid var(--purple-accent)';
+      if (navMenu.classList.contains('mobile-open')) {
+        closeNav();
+      } else {
+        openNav();
       }
     });
 
-    // Close menu when a link is clicked
+    if (closeBtn) closeBtn.addEventListener('click', closeNav);
+    if (backdrop) backdrop.addEventListener('click', closeNav);
+
+    // Close menu when clicking nav links
     navMenu.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         if (window.innerWidth <= 992) {
-          navMenu.style.display = 'none';
+          closeNav();
         }
       });
     });
+
+    // Wire mobile drawer register button
+    if (mobileRegisterBtn) {
+      mobileRegisterBtn.addEventListener('click', () => {
+        closeNav();
+        const openRegBtn = document.getElementById('btn-open-register') || document.getElementById('hero-register-btn');
+        if (openRegBtn) openRegBtn.click();
+      });
+    }
+
+    // Wire mobile drawer replay button
+    if (mobileReplayBtn) {
+      mobileReplayBtn.addEventListener('click', () => {
+        closeNav();
+        const replayNav = document.getElementById('btn-replay-preloader');
+        if (replayNav) replayNav.click();
+      });
+    }
   }
 }
