@@ -109,14 +109,14 @@ function initPreloader() {
         video.pause();
         videoContainer.classList.remove('active');
         vectorContainer.classList.add('active');
-        if (modeText) modeText.textContent = '🎥 Video Mode';
+        if (modeText) modeText.textContent = 'Switch to Video Mode';
         startVectorAnimation();
       } else {
         currentMode = 'video';
         clearInterval(vectorTimer);
         vectorContainer.classList.remove('active');
         videoContainer.classList.add('active');
-        if (modeText) modeText.textContent = '⚡ Vector SVG Mode';
+        if (modeText) modeText.textContent = 'Switch to Vector Mode';
         video.currentTime = 0;
         video.play();
       }
@@ -562,18 +562,19 @@ function initSchedule() {
             ${ev.time}
           </span>
           <h3 class="event-title">${ev.title}</h3>
-          <p class="event-location">📍 ${ev.venue}</p>
+          <p class="event-location"><svg class="icon-inline" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> ${ev.venue}</p>
           <p class="event-desc">${ev.desc}</p>
         </div>
 
         <div>
           <div class="event-badges-row">
-            ${ev.badges.map(b => `<span class="badge-a11y">✓ ${b}</span>`).join('')}
+            ${ev.badges.map(b => `<span class="badge-a11y"><svg class="icon-inline" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> ${b}</span>`).join('')}
           </div>
           <div class="event-footer">
             <span style="font-size: 0.78rem; text-transform: uppercase; color: var(--purple-vibrant); font-weight: 700;">${ev.category}</span>
             <button class="btn-bookmark ${isBookmarked ? 'bookmarked' : ''}" data-id="${ev.id}">
-              ${isBookmarked ? '⭐ Saved' : '☆ Save Event'}
+              <svg class="icon-inline" viewBox="0 0 24 24" width="14" height="14" fill="${isBookmarked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <span>${isBookmarked ? 'Saved' : 'Save Event'}</span>
             </button>
           </div>
         </div>
@@ -585,11 +586,17 @@ function initSchedule() {
         if (bookmarks.includes(ev.id)) {
           bookmarks = bookmarks.filter(id => id !== ev.id);
           bookmarkBtn.classList.remove('bookmarked');
-          bookmarkBtn.textContent = '☆ Save Event';
+          bookmarkBtn.innerHTML = `
+            <svg class="icon-inline" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span>Save Event</span>
+          `;
         } else {
           bookmarks.push(ev.id);
           bookmarkBtn.classList.add('bookmarked');
-          bookmarkBtn.textContent = '⭐ Saved';
+          bookmarkBtn.innerHTML = `
+            <svg class="icon-inline" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span>Saved</span>
+          `;
         }
         localStorage.setItem('purple_bookmarks', JSON.stringify(bookmarks));
         updateBookmarkCount();
@@ -622,7 +629,7 @@ function initSchedule() {
   if (btnShowBookmarks) {
     btnShowBookmarks.addEventListener('click', () => {
       if (bookmarks.length === 0) {
-        alert('You haven’t saved any events yet. Click "☆ Save Event" on any event card!');
+        alert('You haven’t saved any events yet. Click "Save Event" on any event card!');
         return;
       }
       alert(`You have bookmarked ${bookmarks.length} events! Keep checking the schedule for venue reminders.`);

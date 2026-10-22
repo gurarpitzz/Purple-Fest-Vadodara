@@ -1233,11 +1233,14 @@ body {
 }
 
 .zone-features li::before {
-  content: '✓';
+  content: '';
   position: absolute;
-  left: 0;
-  color: var(--purple-bright);
-  font-weight: bold;
+  left: 2px;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--purple-bright);
 }
 
 /* =========================================================
@@ -2149,6 +2152,372 @@ body {
   color: rgba(255, 255, 255, 0.5);
   flex-wrap: wrap;
   gap: 12px;
+}
+
+/* =========================================================
+   ORGANISERS, PARTNERS & COMMITTEE SECTION
+   ========================================================= */
+.partners-section {
+  padding: 90px 0 100px;
+  background: linear-gradient(180deg, #fdfdf9 0%, #faf4fc 50%, #fdfdf9 100%);
+  position: relative;
+  border-top: 1px solid rgba(67, 12, 101, 0.06);
+  border-bottom: 1px solid rgba(67, 12, 101, 0.06);
+}
+
+.partner-tier-block {
+  margin-top: 48px;
+}
+
+.tier-badge-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(67, 12, 101, 0.06);
+  color: var(--purple-primary);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  margin-bottom: 24px;
+  border: 1px solid rgba(67, 12, 101, 0.12);
+  letter-spacing: 0.3px;
+}
+
+.partner-card {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--trans-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--purple-accent);
+}
+
+.partner-logo-box {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(67, 12, 101, 0.06);
+}
+
+.partner-logo-sm {
+  width: 140px;
+  height: 100px;
+  flex-shrink: 0;
+  margin-bottom: 0;
+  margin-right: 20px;
+}
+
+.partner-logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform var(--trans-fast);
+}
+
+.partner-card:hover .partner-logo-img {
+  transform: scale(1.04);
+}
+
+.partner-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.partner-role-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--purple-vibrant);
+  margin-bottom: 8px;
+}
+
+.partner-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--purple-primary);
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+
+.partner-location {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 12px;
+}
+
+.partner-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Venue Partner Card */
+.venue-partner-card {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--trans-smooth);
+  height: 100%;
+}
+
+.venue-partner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--purple-accent);
+}
+
+.venue-partner-icon-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple-primary), var(--purple-vibrant));
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(67, 12, 101, 0.2);
+}
+
+/* Leadership & Committee Cards */
+.leader-card {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--trans-fast);
+  height: 100%;
+}
+
+.leader-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--purple-vibrant);
+}
+
+.leader-card.highlight-leader {
+  background: linear-gradient(135deg, #ffffff 0%, var(--purple-ultralight) 100%);
+  border: 1.5px solid rgba(111, 28, 153, 0.3);
+}
+
+.leader-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(67, 12, 101, 0.08);
+  color: var(--purple-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.leader-avatar-primary {
+  background: linear-gradient(135deg, var(--purple-primary), var(--purple-vibrant));
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(67, 12, 101, 0.25);
+}
+
+.leader-role {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--purple-vibrant);
+  letter-spacing: 0.8px;
+  margin-bottom: 2px;
+}
+
+.leader-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--purple-primary);
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.leader-org {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Secretariat & Direct Contact Box */
+.secretariat-box {
+  background: linear-gradient(135deg, #2a0542 0%, #430c65 50%, #6f1c99 100%);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  color: #ffffff;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.secretariat-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fef3c7;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.secretariat-title {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.secretariat-address {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.secretariat-meta-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.sec-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--trans-fast);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sec-link:hover {
+  background: #ffffff;
+  color: var(--purple-primary);
+  transform: translateY(-2px);
+}
+
+.contact-persons-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.contact-card-heading {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fef3c7;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.contact-person-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+.contact-sub {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-tel-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  color: var(--purple-primary);
+  padding: 7px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--trans-fast);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-tel-btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.contact-dual-tel {
+  display: flex;
+  gap: 8px;
+}
+
+.footer-secretariat-compact {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 12px;
+  line-height: 1.5;
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+  padding-top: 10px;
+}
+
+.footer-secretariat-compact p {
+  margin-bottom: 4px;
+}
+
+.icon-inline {
+  display: inline-block;
+  vertical-align: -2px;
 }
 
 /* =========================================================
