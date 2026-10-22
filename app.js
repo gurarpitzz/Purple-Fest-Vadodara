@@ -46,6 +46,7 @@ function initPreloader() {
   // Try playing the video automatically
   function startPlayback() {
     isExited = false;
+    document.body.classList.add('loading-state');
     preloader.classList.remove('preloader-exit');
 
     if (currentMode === 'video') {
@@ -153,6 +154,7 @@ function initPreloader() {
     if (progressBar) progressBar.style.width = '100%';
     
     preloader.classList.add('preloader-exit');
+    document.body.classList.remove('loading-state');
     setTimeout(() => {
       video.pause();
     }, 800);

@@ -31,10 +31,8 @@
   <aside id="preloader" class="preloader-overlay" aria-label="Purple Fest Vadodara Intro Animation">
     <canvas id="preloader-canvas" class="preloader-canvas" aria-hidden="true"></canvas>
 
-
-
     <!-- Central Stage for Animation -->
-    <main class="preloader-stage">
+    <div id="preloader-stage" class="preloader-stage">
       <!-- High Fidelity Video Player (Plays final.mp4) -->
       <div id="video-container" class="stage-view active">
         <div class="video-frame-glow"></div>
@@ -42,6 +40,7 @@
           id="preloader-video" 
           class="preloader-video-element" 
           src="final.mp4" 
+          autoplay
           playsinline 
           muted 
           preload="auto"
@@ -86,7 +85,7 @@
           <text class="svg-subtitle-text" x="400" y="495" text-anchor="middle">Vadodara</text>
         </svg>
       </div>
-    </main>
+    </div>
 
   </aside>
 
