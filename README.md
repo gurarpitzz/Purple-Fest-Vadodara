@@ -18,7 +18,7 @@ Official web experience for **Purple Fest Vadodara 2027** — India's premier fe
   - Filter by day, zone (Sports, Tech Expo, Cultural, Workshops).
   - Save sessions to personal itinerary with offline local storage sync.
 - **Interactive Festival Zone Map**:
-  - Visual layout of Navlakhi Grounds with detailed zone coordinates.
+  - Visual layout of festival zones with detailed zone coordinates.
 - **Dynamic Registration & Ticket Pass Generator**:
   - Instant digital delegate pass with unique QR code verification.
   - Printable and downloadable passes.

@@ -348,7 +348,7 @@ function initAccessibilityToolbar() {
       speakText.textContent = 'Listen Overview';
       btnSpeak.classList.remove('active');
     } else {
-      const narrationText = `Welcome to Purple Fest Vadodara 2027, held at Navlakhi Ground, Vadodara, Gujarat from January 21 to 23, 2027. Celebrating diversity and empowering abilities, featuring 100 assistive technology innovations, exhilarating inclusive sports, wheelchair Garba, and national policy think tanks. All admission is free for Persons with Disabilities and their companions.`;
+      const narrationText = `Welcome to Purple Fest Vadodara 2027, held in Vadodara, Gujarat from January 21 to 23, 2027. Celebrating diversity and empowering abilities, featuring 100 assistive technology innovations, exhilarating inclusive sports, wheelchair Garba, and national policy think tanks. All admission is free for Persons with Disabilities and their companions.`;
       
       const utterance = new SpeechSynthesisUtterance(narrationText);
       utterance.rate = 0.95;
@@ -407,7 +407,7 @@ const FESTIVAL_EVENTS = [
     category: 'culture',
     title: 'Grand Opening Ceremony & Vadodara Inclusive Anthem',
     time: '10:00 AM - 12:00 PM',
-    venue: 'Main Royal Amphitheater, Navlakhi Ground',
+    venue: 'Main Royal Amphitheater',
     desc: 'Inauguration by dignitaries followed by the official release of the Purple Anthem, featuring inclusive dance by 200 Divyang artists.',
     badges: ['Wheelchair Access', 'ISL Interpreter', 'Audio Description']
   },
@@ -437,7 +437,7 @@ const FESTIVAL_EVENTS = [
     category: 'culture',
     title: 'Night of Melodies: Visually Impaired National Symphony',
     time: '06:30 PM - 09:00 PM',
-    venue: 'Sayaji Cultural Stage',
+    venue: 'Grand Cultural Stage',
     desc: 'A captivating symphonic blend of Hindustani classical ragas and contemporary melodies performed by 45 virtuoso blind musicians.',
     badges: ['Audio Stream', 'Sensory Friendly', 'Priority Seating']
   },
@@ -449,7 +449,7 @@ const FESTIVAL_EVENTS = [
     category: 'sports',
     title: 'National Blind Cricket Championship: Gujarat vs Rest of India',
     time: '09:00 AM - 01:00 PM',
-    venue: 'Purple Sports Complex (Navlakhi Grounds)',
+    venue: 'Purple Sports Complex',
     desc: 'High-octane T20 match featuring international champions with audio ball tracking and live descriptive commentary.',
     badges: ['Audio Commentary', 'Wheelchair Stands', 'ISL Commentary']
   },
@@ -459,7 +459,7 @@ const FESTIVAL_EVENTS = [
     category: 'culture',
     title: 'Historic Wheelchair Garba & Folk Dance Extravaganza',
     time: '05:00 PM - 08:30 PM',
-    venue: 'Navlakhi Grand Circle',
+    venue: 'Grand Festival Circle',
     desc: 'Vadodara’s signature festival tradition reimagined — 300 wheelchair dancers in vibrant traditional Gujarati attire spinning in synchronized harmony.',
     badges: ['Wheelchair Stage', 'Live Music', 'ISL Host']
   },
@@ -511,7 +511,7 @@ const FESTIVAL_EVENTS = [
     category: 'culture',
     title: 'Grand Finale Purple Mega Concert & Purple Awards 2027',
     time: '07:00 PM - 10:00 PM',
-    venue: 'Navlakhi Grand Grounds',
+    venue: 'Main Festival Arena',
     desc: 'Valedictory address, Purple Inclusivity Awards honoring national achievers, followed by a headline celebrity concert with tactile vibrating dance floor.',
     badges: ['Tactile Floor', 'Subwoofer Packs', 'Universal Access']
   }
