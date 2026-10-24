@@ -1,5 +1,5 @@
 /**
- * PURPLE FEST VADODARA 2026
+ * PURPLE FEST VADODARA 2027
  * Interactive Web Application & Preloader Engine
  */
 
@@ -348,7 +348,7 @@ function initAccessibilityToolbar() {
       speakText.textContent = 'Listen Overview';
       btnSpeak.classList.remove('active');
     } else {
-      const narrationText = `Welcome to Purple Fest Vadodara 2026, held at Navlakhi Ground, Vadodara, Gujarat from November 27 to 29. Celebrating diversity and empowering abilities, featuring 100 assistive technology innovations, exhilarating inclusive sports, wheelchair Garba, and national policy think tanks. All admission is free for Persons with Disabilities and their companions.`;
+      const narrationText = `Welcome to Purple Fest Vadodara 2027, held at Navlakhi Ground, Vadodara, Gujarat from January 21 to 23, 2027. Celebrating diversity and empowering abilities, featuring 100 assistive technology innovations, exhilarating inclusive sports, wheelchair Garba, and national policy think tanks. All admission is free for Persons with Disabilities and their companions.`;
       
       const utterance = new SpeechSynthesisUtterance(narrationText);
       utterance.rate = 0.95;
@@ -372,8 +372,8 @@ function initAccessibilityToolbar() {
    3. LIVE COUNTDOWN TIMER
    ========================================================= */
 function initCountdown() {
-  // Target: November 27, 2026, 09:00:00 AM IST
-  const targetDate = new Date('2026-11-27T09:00:00+05:30').getTime();
+  // Target: January 21, 2027, 09:00:00 AM IST
+  const targetDate = new Date('2027-01-21T09:00:00+05:30').getTime();
 
   function update() {
     const now = new Date().getTime();
@@ -509,7 +509,7 @@ const FESTIVAL_EVENTS = [
     id: 'ev-11',
     day: 'day3',
     category: 'culture',
-    title: 'Grand Finale Purple Mega Concert & Purple Awards 2026',
+    title: 'Grand Finale Purple Mega Concert & Purple Awards 2027',
     time: '07:00 PM - 10:00 PM',
     venue: 'Navlakhi Grand Grounds',
     desc: 'Valedictory address, Purple Inclusivity Awards honoring national achievers, followed by a headline celebrity concert with tactile vibrating dance floor.',
@@ -698,7 +698,7 @@ function initRegistrationModal() {
                               .map(cb => cb.value);
     
     // Generate Pass Details
-    const randomId = 'PFV-2026-' + Math.floor(1000 + Math.random() * 9000);
+    const randomId = 'PFV-2027-' + Math.floor(1000 + Math.random() * 9000);
     
     ticketName.textContent = name;
     ticketCat.textContent = cat;

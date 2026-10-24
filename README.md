@@ -1,6 +1,6 @@
-# Purple Fest Vadodara 2026
+# Purple Fest Vadodara 2027
 
-Official web experience for **Purple Fest Vadodara 2026** — India's premier festival celebrating diversity, inclusivity, accessibility, and empowerment.
+Official web experience for **Purple Fest Vadodara 2027** — India's premier festival celebrating diversity, inclusivity, accessibility, and empowerment.
 
 ![Purple Fest Vadodara](purple_fest_vadodara_logo.png)
 
