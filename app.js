@@ -348,7 +348,7 @@ function initAccessibilityToolbar() {
       speakText.textContent = 'Listen Overview';
       btnSpeak.classList.remove('active');
     } else {
-      const narrationText = `Welcome to Purple Fest Vadodara 2027, held in Vadodara, Gujarat from January 21 to 23, 2027. Celebrating diversity and empowering abilities, featuring 100 assistive technology innovations, exhilarating inclusive sports, wheelchair Garba, and national policy think tanks. All admission is free for Persons with Disabilities and their companions.`;
+      const narrationText = `Welcome to Purple Fest Vadodara 2027, held in Vadodara, Gujarat from January 21 to 23, 2027. Celebrating diversity and empowering abilities, featuring 100 assistive technology innovations, exhilarating inclusive sports, wheelchair Garba, and national policy think tanks. Festival delegate passes are available at ₹2,200.`;
       
       const utterance = new SpeechSynthesisUtterance(narrationText);
       utterance.rate = 0.95;
